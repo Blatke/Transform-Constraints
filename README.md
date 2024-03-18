@@ -1,4 +1,4 @@
-The Unity's Rotation Constraint Component can be adopted to the circumstance that when Gameobject A is rotating, there is a need of simultaneously rotating another gameobject, B, to a certain extent. However, I cannot by this far how to rotate Gameobject B in a inverted way by using this component, which means a rotation of 30 degrees in A can let B rotate -30 degree instead of the same 30 degree.
+The Unity's Rotation Constraint Component can be adopted in the circumstance that when Gameobject A is rotating, there is a need of simultaneously rotating another gameobject, B, to a certain extent. However, I cannot by this far how to rotate Gameobject B in a inverted way by using this component, which means a rotation of 30 degrees in A can let B rotate -30 degree instead of the same 30 degree.
 Thus, I coded two scripts to realize this demand.
 
 Create two gameobjects such as Cube and Cube(1) in the scene. 
