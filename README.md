@@ -11,10 +11,10 @@ Option Weight defines to what extent Cube(1) will react to Cube's rotation.
 Click the Play button to run the scene.
 Rotate Cube, and you can see Cube(1) is rotating. The Weight is set to 1.0 which means Cube(1) will 100% follow the rotation of Cube. If Weight is 0.4, for instance, and rotation of Cube is 100 degrees, Cube(1) will rotate 100 * 0.4 = 40 degrees.
 When Option Inverted is checked, the rotation of Cube(1) will multiply by -1.0 that lets it rotate reversely.
-https://github.com/Blatke/Transform-Constraints/assets/125734582/3cc740ea-8d45-42ab-aa85-2cbb05a64346
+Video: https://github.com/Blatke/Transform-Constraints/assets/125734582/3cc740ea-8d45-42ab-aa85-2cbb05a64346
 
 Change the Option Constraint Type to "r2p". So, Cube(1) will not rotate, instead, it will move its position. How many degrees Cube rotates in XYZ axes, how many units Cube(1) will move in corresponding axes. 
-https://github.com/Blatke/Transform-Constraints/assets/125734582/5c2aacda-5550-42c6-9609-5990ce150108
+Video: https://github.com/Blatke/Transform-Constraints/assets/125734582/5c2aacda-5550-42c6-9609-5990ce150108
 
 This function might be useful when a forearm rotating and the bones driving the muscles needs to rotate reversely or make a move to let muscles on the arm uplift.
 
