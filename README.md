@@ -5,6 +5,7 @@ Create two gameobjects such as Cube and Cube(1) in the scene.
 Drag and drop marginTransformGet.cs to Cube, and then it can be seen some options in Inspector window (see the image below).
 Assign Game Object B to Cube(1). This means when we rotate Cube, Cube(1) will automatically rotate.
 Option Weight defines to what extent Cube(1) will react to Cube's rotation.
+
 ![d47aa0e8682a83b4a4fbe9918f3cdcfd_image_ex=660a400e is=65f7cb0e hm=877b867956358974a78cb441782980b4e9469d111b3996aa57bc8856272c16d2](https://github.com/Blatke/Transform-Constraints/assets/125734582/b56d3c14-379b-4a9c-a103-99bf7b2dbe9a)
 
 Click the Play button to run the scene.
