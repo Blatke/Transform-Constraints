@@ -17,3 +17,6 @@ Change the Option Constraint Type to "r2p". So, Cube(1) will not rotate, instead
 https://github.com/Blatke/Transform-Constraints/assets/125734582/5c2aacda-5550-42c6-9609-5990ce150108
 
 This function might be useful when a forearm rotating and the bones driving the muscles needs to rotate reversely or make a move to let muscles on the arm uplift.
+
+-------
+This project was updated. For the new features, please check the Release (https://github.com/Blatke/Transform-Constraints/releases).
