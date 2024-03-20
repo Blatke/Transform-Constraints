@@ -20,4 +20,5 @@ Video: https://github.com/Blatke/Transform-Constraints/assets/125734582/5c2aacda
 This function might be useful when a forearm rotating and the bones driving the muscles needs to rotate reversely or make a move to let muscles on the arm uplift.
 
 -------
-**This project was updated. For the new features, please check the Release (https://github.com/Blatke/Transform-Constraints/releases).**
+[!NOTE]
+This project was updated. For the new features, please check the Release (https://github.com/Blatke/Transform-Constraints/releases).
