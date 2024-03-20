@@ -3,7 +3,7 @@ Thus, I coded two scripts to realize this demand.
 
 Create two gameobjects such as Cube and Cube(1) in the scene. 
 Drag and drop **Constraint_Transform_Component.cs** to Cube, and then it can be seen some options in Inspector window (see the image below).
-Assign Game Object B to Cube(1). This means when we rotate Cube, Cube(1) will automatically rotate.
+Assign Target Game Object to Cube(1). This means when we rotate Cube, Cube(1) will automatically rotate.
 Option Weight defines to what extent Cube(1) will react to Cube's rotation.
 
 ![image](https://github.com/Blatke/Transform-Constraints/assets/125734582/6068541e-6947-49d5-8940-9ef7254b75e1)
