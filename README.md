@@ -2,7 +2,7 @@ The Unity's Rotation Constraint Component can be adopted in the circumstance tha
 Thus, I coded two scripts to realize this demand.
 
 Create two gameobjects such as Cube and Cube(1) in the scene. 
-Drag and drop **marginTransformGet.cs** to Cube, and then it can be seen some options in Inspector window (see the image below).
+Drag and drop **Constraint_Transform_Component.cs** to Cube, and then it can be seen some options in Inspector window (see the image below).
 Assign Game Object B to Cube(1). This means when we rotate Cube, Cube(1) will automatically rotate.
 Option Weight defines to what extent Cube(1) will react to Cube's rotation.
 
