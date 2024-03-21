@@ -1,5 +1,5 @@
 // Coded by Bl@ke. http://www.blatke.cc/
-// Version 0.1.3 on March 18, 2024. 
+// Version 0.1.4 on March 22, 2024. 
 // This is for changing a designated gameobject's transform, such as rotation, by using a vector.
 using System.Collections;
 using System.Collections.Generic;
@@ -16,7 +16,7 @@ public struct Constraint_Transform
     public void trans (string type, Vector3 marginA, GameObject b, float weight, bool inverted, bool isActive, string axisStandard, bool fixedX, bool fixedY, bool fixedZ)
     {
         // marginA is the additional rotation of Gameobject A (this).
-        if (b != null)
+        if (b != null & type != null)
         {
             type = type.ToLower();
             if (isActive)
@@ -39,6 +39,7 @@ public struct Constraint_Transform
 
                 switch (type){
                     case "r": // Rotation to rotation.
+                    case "r2r":
                         b.transform.localEulerAngles += marginA;
                         break;                        
                     case "r2p": // Rotation to position.
@@ -48,41 +49,47 @@ public struct Constraint_Transform
                         break;
                 }    
 
-                if (type.Substring(0,3) == "r2b") // Rotation to Blend Shape. e.g.: r2bx.0 where x means x's value affects blendshape; 0 means the index number of the blendshape to be affected.
+                if (type.Length>=4)
                 {
-                    string axis2Bls = type.Substring(3,1);
-                    string[] typeIndexSplit = type.Split(".");
-                    int typeIndex = int.Parse(typeIndexSplit[1]);
-                    SkinnedMeshRenderer smr = b.GetComponent<SkinnedMeshRenderer> ();
-                    if (smr.sharedMesh.blendShapeCount >= 1)
+                    if (type.Substring(0,3) == "r2b") // Rotation to Blend Shape. e.g.: r2bx.0 where x means x's value affects blendshape; 0 means the index number of the blendshape to be affected.
                     {
-                        float blendShapeWeight1 = smr.GetBlendShapeWeight(typeIndex);
-                        float blendShapeWeight2;
-                        switch (axis2Bls.ToLower())
+                        if(b.TryGetComponent<SkinnedMeshRenderer>(out var skinnedMeshRenderer))
                         {
-                            case "y":
-                                blendShapeWeight2 = marginA.y;
-                                break;
-                            case "z":
-                                blendShapeWeight2 = marginA.z;
-                                break;
-                            case "x":
-                            default:
-                                blendShapeWeight2 = marginA.x;
-                                break;
+                            // string axis2Bls = type.Substring(3,1);
+                            // string axis2Bls;
+                            string[] typeIndexSplit = type.Split(".");
+                            // axis2Bls = typeIndexSplit[0];
+                            int typeIndex = int.Parse(typeIndexSplit[1]);
+                            SkinnedMeshRenderer smr = b.GetComponent<SkinnedMeshRenderer> ();
+                            if (typeIndex >=0 && smr.sharedMesh.blendShapeCount >= typeIndex)
+                            {
+                                float blendShapeWeight1 = smr.GetBlendShapeWeight(typeIndex);
+                                float blendShapeWeight2;
+                                if (!fixedX){
+                                    blendShapeWeight2 = marginA.x;
+                                }else if (!fixedY){
+                                    blendShapeWeight2 = marginA.y;
+                                }else{
+                                    blendShapeWeight2 = marginA.z;
+                                }
+                                float blendShapeWeight3 = blendShapeWeight1 + blendShapeWeight2;
+                                if (blendShapeWeight3 > 100f)
+                                {
+                                    blendShapeWeight3 = 100f;
+                                }else if (blendShapeWeight3 < 0f)
+                                {
+                                    blendShapeWeight3 = 0f;
+                                }
+                                smr.SetBlendShapeWeight(typeIndex,blendShapeWeight3);
+                                //Debug.Log("GetBlendShapeWeight="+blendShapeWeight1+"; SetBlendShapeWeight="+blendShapeWeight3+".");
+                            }else{
+                                Debug.Log("The target gameobject has no blendshape matched.");
+                            }
+                        }else{
+                            Debug.Log("The target gameobject has no SkinnedMeshRender component.");
                         }
-                        float blendShapeWeight3 = blendShapeWeight1 + blendShapeWeight2;
-                        if (blendShapeWeight3 > 100f)
-                        {
-                            blendShapeWeight3 = 100f;
-                        }else if (blendShapeWeight3 < 0f)
-                        {
-                            blendShapeWeight3 = 0f;
-                        }
-                        smr.SetBlendShapeWeight(typeIndex,blendShapeWeight3);
-                        //Debug.Log("GetBlendShapeWeight="+blendShapeWeight1+"; SetBlendShapeWeight="+blendShapeWeight3+".");
-                    }
-                }            
+                    }  
+                }          
 
                 returnV3 = marginA;
             }
