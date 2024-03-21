@@ -65,6 +65,8 @@ public class Constraint_Transform_Component : MonoBehaviour
                 // Debug.Log("Target object rotated: " + consTrans.returnV3);
 
             }
+        }else{
+            Debug.Log("The target gameobject and the current gameobject are exactly the same one.\nPlease change to another gameobject as the target to be affected.");
         }
     }
 }
