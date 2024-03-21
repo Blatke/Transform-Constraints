@@ -6,7 +6,7 @@ Drag and drop **Constraint_Transform_Component.cs** to Cube, and then it can be 
 Assign Target Game Object to Cube(1). This means when we rotate Cube, Cube(1) will automatically rotate.
 Option Weight defines to what extent Cube(1) will react to Cube's rotation.
 
-![image](https://github.com/Blatke/Transform-Constraints/assets/125734582/6068541e-6947-49d5-8940-9ef7254b75e1)
+![image](https://github.com/Blatke/Transform-Constraints/assets/125734582/96559282-7bb3-4e18-9b14-b99cd8d820a1)
 
 
 Click the Play button to run the scene.
