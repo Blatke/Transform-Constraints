@@ -22,9 +22,10 @@ public struct Constraint_Transform
             if (isActive)
             {
                 Universal_DegreeNormalize dnl;
-                marginA = dnl.d(marginA);
+
+                marginA = dnl.d(marginA);             
                 marginA *= weight;
-                
+
 
                 if (inverted)
                 {
@@ -41,6 +42,7 @@ public struct Constraint_Transform
                     case "r": // Rotation to rotation.
                     case "r2r":
                         b.transform.localEulerAngles += marginA;
+                        // Debug.Log(b.transform.localEulerAngles);
                         break;                        
                     case "r2p": // Rotation to position.
                         b.transform.localPosition += marginA;
