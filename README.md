@@ -1,3 +1,7 @@
+> [!NOTE]
+> This project was updated. For the new features, please check the Release (https://github.com/Blatke/Transform-Constraints/releases).
+> This ReadMe file will be renewed after this project has been stablized. 
+
 The Unity's Rotation Constraint Component can be adopted in the circumstance that when Gameobject A is rotating, there is a need of simultaneously rotating another gameobject, B, to a certain extent. However, I cannot by this far how to rotate Gameobject B in a inverted way by using this component, which means a rotation of 30 degrees in A can let B rotate -30 degrees instead of the same 30 degrese.
 Thus, I coded two scripts to realize this demand.
 
@@ -18,8 +22,3 @@ Change the Option Constraint Type to "r2p". So, Cube(1) will not rotate, instead
 Video: https://github.com/Blatke/Transform-Constraints/assets/125734582/5c2aacda-5550-42c6-9609-5990ce150108
 
 This function might be useful when a forearm rotating and the bones driving the muscles needs to rotate reversely or make a move to let muscles on the arm uplift.
-
-
-> [!NOTE]
-> This project was updated. For the new features, please check the Release (https://github.com/Blatke/Transform-Constraints/releases).
-> This ReadMe file will be renewed after this project has been stablized. 
