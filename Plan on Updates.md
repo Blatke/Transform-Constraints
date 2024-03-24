@@ -7,3 +7,5 @@ The functions that need to be added in the future:
 3. **Operation on the target's material** (relative to the shader) **properties**. For instance, input "Normal" in a particualr textbox will finally allow the current gameobject's rotation to affect the parameter of the target's normal map. If a boot is rotating and its wrinkles it might appear on its surface are realized by a normal map, this function could help.
 
 4. If it is utilized in Studio where it allows players to use simulated axis-tools (or gizmo) to adjust the transforms of gameobjects, the speed of gizmo movement is about to be set, and needs to be multiplied by Time.deltaTime.
+
+5. A rectification should be conducted on Constraint_Transform.cs in which Transform.eulerAngles could be changed to Quaternion.
